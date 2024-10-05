@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
   <title>Lock Screen</title>
   <style>
     body, html {
@@ -14,6 +14,9 @@
       align-items: center;
       background-image: url('lockscreen-bg.jpg'); /* Custom Wallpaper */
       background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
     }
 
     .lock-screen {
@@ -22,17 +25,17 @@
     }
 
     .time {
-      font-size: 48px;
+      font-size: 8vw; /* Adjusted for responsive size */
     }
 
     .date {
-      font-size: 24px;
-      margin-bottom: 50px;
+      font-size: 4vw;
+      margin-bottom: 10%;
     }
 
     .unlock-button {
-      padding: 15px 30px;
-      font-size: 18px;
+      padding: 2vw 5vw;
+      font-size: 4vw;
       background-color: rgba(255, 255, 255, 0.3);
       border: none;
       border-radius: 25px;
@@ -49,6 +52,7 @@
       left: 50%;
       transform: translateX(-50%);
       color: rgba(255, 255, 255, 0.8);
+      font-size: 3vw;
     }
   </style>
 </head>
