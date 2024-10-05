@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Screen</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url('homescreen-bg.jpg'); /* Custom Wallpaper */
+      background-size: cover;
+    }
+
+    .home-screen {
+      display: grid;
+      grid-template-columns: repeat(4, 80px);
+      grid-gap: 20px;
+      text-align: center;
+    }
+
+    .app-icon {
+      width: 70px;
+      height: 70px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .app-icon img {
+      width: 40px;
+    }
+
+    .app-icon:hover {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .dock {
+      position: absolute;
+      bottom: 20px;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    .dock-icon {
+      width: 60px;
+      height: 60px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .dock-icon img {
+      width: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="home-screen">
+    <div class="app-icon" onclick="openApp('Messages')">
+      <img src="icons/messages.png" alt="Messages">
+    </div>
+    <div class="app-icon" onclick="openApp('Phone')">
+      <img src="icons/phone.png" alt="Phone">
+    </div>
+    <div class="app-icon" onclick="openApp('Browser')">
+      <img src="icons/browser.png" alt="Browser">
+    </div>
+    <div class="app-icon" onclick="openApp('Settings')">
+      <img src="icons/settings.png" alt="Settings">
+    </div>
+  </div>
+
+  <div class="dock">
+    <div class="dock-icon" onclick="openApp('Music')">
+      <img src="icons/music.png" alt="Music">
+    </div>
+    <div class="dock-icon" onclick="openApp('Camera')">
+      <img src="icons/camera.png" alt="Camera">
+    </div>
+  </div>
+
+  <script>
+    function openApp(appName) {
+      alert('Opening ' + appName);
+      // Logic to launch the web app for that functionality.
+    }
+  </script>
+
+</body>
+</html>p
