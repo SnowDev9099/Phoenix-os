@@ -1,18 +1,16 @@
-/* General Reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Fullscreen for lock and home screen */
 body, html {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: sans-serif;
-  background-color: #f5f5f5;
 }
 
 /* Dynamic Island */
@@ -26,17 +24,46 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
   color: white;
   font-size: 14px;
+  z-index: 10;
 }
 
 .dynamic-content {
   padding: 10px;
 }
 
+/* Boot Screen */
+.boot-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.boot-screen h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.photo-upload {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
 /* Lock Screen */
 .lock-screen {
+  display: none;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -59,9 +86,25 @@ body, html {
   margin-bottom: 50px;
 }
 
-.unlock {
-  font-size: 18px;
-  opacity: 0.7;
+/* Unlock arrow */
+.unlock-container {
+  display: flex;
+  align-items: center;
+}
+
+.unlock-text {
+  margin-right: 10px;
+}
+
+.unlock-arrow {
+  width: 30px;
+  height: 30px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 
 /* Home Screen */
@@ -94,9 +137,4 @@ body, html {
 .app-icon p {
   margin-top: 5px;
   font-size: 14px;
-}
-
-/* Basic Transition for Screen Swap */
-.screen {
-  transition: opacity 0.3s ease;
 }
