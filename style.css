@@ -13,6 +13,29 @@ body, html {
   font-family: sans-serif;
 }
 
+/* Boot Screen */
+.boot-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.photo-upload, .password-setup {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
 /* Dynamic Island */
 .dynamic-island {
   position: fixed;
@@ -27,38 +50,11 @@ body, html {
   color: white;
   font-size: 14px;
   z-index: 10;
+  transition: width 0.3s ease;
 }
 
-.dynamic-content {
-  padding: 10px;
-}
-
-/* Boot Screen */
-.boot-screen {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-}
-
-.boot-screen h1 {
-  margin-bottom: 10px;
-  font-size: 28px;
-}
-
-.photo-upload {
-  margin-bottom: 20px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
+.dynamic-island.active {
+  width: 60%;
 }
 
 /* Lock Screen */
@@ -86,25 +82,24 @@ button {
   margin-bottom: 50px;
 }
 
-/* Unlock arrow */
 .unlock-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.unlock-text {
-  margin-right: 10px;
+input[type=password] {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
-.unlock-arrow {
-  width: 30px;
-  height: 30px;
-  border: solid white;
-  border-width: 0 4px 4px 0;
-  display: inline-block;
-  padding: 3px;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 16px;
 }
 
 /* Home Screen */
