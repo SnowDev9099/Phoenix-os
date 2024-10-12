@@ -2,80 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Lock Screen</title>
-  <style>
-    body, html {
-      height: 100%;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-image: url('lockscreen-bg.jpg'); /* Custom Wallpaper */
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      overflow: hidden;
-    }
-
-    .lock-screen {
-      text-align: center;
-      color: white;
-    }
-
-    .time {
-      font-size: 8vw; /* Adjusted for responsive size */
-    }
-
-    .date {
-      font-size: 4vw;
-      margin-bottom: 10%;
-    }
-
-    .unlock-button {
-      padding: 2vw 5vw;
-      font-size: 4vw;
-      background-color: rgba(255, 255, 255, 0.3);
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-    }
-
-    .unlock-button:hover {
-      background-color: rgba(255, 255, 255, 0.5);
-    }
-
-    .notifications {
-      position: absolute;
-      bottom: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 3vw;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iOS Clone</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="lock-screen">
-    <div class="time">12:30</div>
-    <div class="date">October 5, 2024</div>
-    <button class="unlock-button" onclick="unlock()">Swipe Up to Unlock</button>
+
+  <!-- Dynamic Island -->
+  <div class="dynamic-island">
+    <div class="dynamic-content">
+      <p>Music Playing...</p>
+    </div>
   </div>
 
-  <div class="notifications">1 New Message</div>
+  <!-- Lock Screen -->
+  <div id="lock-screen" class="screen lock-screen">
+    <div class="time">12:45</div>
+    <div class="date">Friday, October 12</div>
+    <div class="unlock">Swipe up to unlock</div>
+  </div>
 
-  <script>
-    function unlock() {
-      window.location.href = 'home.html'; // Redirect to Home Screen
-    }
+  <!-- Home Screen -->
+  <div id="home-screen" class="screen home-screen">
+    <div class="apps">
+      <div class="app-icon">
+        <img src="phone.png" alt="Phone">
+        <p>Phone</p>
+      </div>
+      <div class="app-icon">
+        <img src="messages.png" alt="Messages">
+        <p>Messages</p>
+      </div>
+      <div class="app-icon">
+        <img src="camera.png" alt="Camera">
+        <p>Camera</p>
+      </div>
+      <div class="app-icon">
+        <img src="settings.png" alt="Settings">
+        <p>Settings</p>
+      </div>
+      <!-- Add more app icons as needed -->
+    </div>
+  </div>
 
-    // Time and Date Update
-    setInterval(() => {
-      const now = new Date();
-      document.querySelector('.time').textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-      document.querySelector('.date').textContent = now.toLocaleDateString();
-    }, 1000);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
