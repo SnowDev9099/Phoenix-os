@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iOS Clone with Boot Screen</title>
+  <title>iOS Clone</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,6 +25,12 @@
       <input type="file" id="home-photo" accept="image/*">
     </div>
 
+    <!-- Set Password -->
+    <div class="password-setup">
+      <label for="password">Set Password:</label>
+      <input type="password" id="password" placeholder="Enter a password">
+    </div>
+
     <button id="submit-preferences">Finish Setup</button>
   </div>
 
@@ -35,13 +41,13 @@
 
   <!-- Lock Screen -->
   <div id="lock-screen" class="screen lock-screen">
-    <div class="time">12:45</div>
-    <div class="date">Friday, October 12</div>
+    <div class="time" id="time"></div>
+    <div class="date" id="date"></div>
 
-    <!-- Swipe to unlock -->
+    <!-- Password Unlock -->
     <div class="unlock-container">
-      <span class="unlock-text">Swipe to unlock</span>
-      <div class="unlock-arrow"></div>
+      <input type="password" id="unlock-password" placeholder="Enter password to unlock">
+      <button id="unlock-button">Unlock</button>
     </div>
   </div>
 
@@ -60,10 +66,7 @@
         <img src="camera.png" alt="Camera">
         <p>Camera</p>
       </div>
-      <div class="app-icon">
-        <img src="settings.png" alt="Settings">
-        <p>Settings</p>
-      </div>
+      <!-- More app icons... -->
     </div>
   </div>
 
