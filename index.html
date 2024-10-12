@@ -3,23 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iOS Clone</title>
+  <title>iOS Clone with Boot Screen</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Dynamic Island -->
-  <div class="dynamic-island">
-    <div class="dynamic-content">
-      <p>Music Playing...</p>
+  <!-- First Time Boot Screen -->
+  <div id="boot-screen" class="screen boot-screen">
+    <h1>Welcome!</h1>
+    <p>Customize your experience</p>
+
+    <!-- Photo Upload for Lock Screen -->
+    <div class="photo-upload">
+      <label for="lock-photo">Upload Lock Screen Photo:</label>
+      <input type="file" id="lock-photo" accept="image/*">
     </div>
+
+    <!-- Photo Upload for Home Screen -->
+    <div class="photo-upload">
+      <label for="home-photo">Upload Home Screen Photo:</label>
+      <input type="file" id="home-photo" accept="image/*">
+    </div>
+
+    <button id="submit-preferences">Finish Setup</button>
+  </div>
+
+  <!-- Dynamic Island -->
+  <div class="dynamic-island" id="dynamic-island">
+    <div id="dynamic-content">No notifications</div>
   </div>
 
   <!-- Lock Screen -->
   <div id="lock-screen" class="screen lock-screen">
     <div class="time">12:45</div>
     <div class="date">Friday, October 12</div>
-    <div class="unlock">Swipe up to unlock</div>
+
+    <!-- Swipe to unlock -->
+    <div class="unlock-container">
+      <span class="unlock-text">Swipe to unlock</span>
+      <div class="unlock-arrow"></div>
+    </div>
   </div>
 
   <!-- Home Screen -->
@@ -41,7 +64,6 @@
         <img src="settings.png" alt="Settings">
         <p>Settings</p>
       </div>
-      <!-- Add more app icons as needed -->
     </div>
   </div>
 
